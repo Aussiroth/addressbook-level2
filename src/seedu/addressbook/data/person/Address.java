@@ -82,7 +82,7 @@ class Block{
     public final String blockValue;
 
     public Block(String block){
-        this.blockValue = block;
+        this.blockValue = block.trim();
     }
 
     @Override
@@ -103,7 +103,7 @@ class Street{
     public final String streetValue;
 
     public Street(String street){
-        this.streetValue = street;
+        this.streetValue = street.trim();
     }
 
     @Override
@@ -124,7 +124,7 @@ class Unit{
     public final String unitValue;
 
     public Unit(String unit){
-        this.unitValue = unit;
+        this.unitValue = unit.trim();
     }
 
     @Override
@@ -145,7 +145,7 @@ class Postal{
     public final String postalValue;
 
     public Postal(String postal){
-        this.postalValue = postal;
+        this.postalValue = postal.trim();
     }
 
     @Override
