@@ -34,7 +34,7 @@ public class Address {
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
         if (!isValidAddress(trimmedAddress)) {
-
+            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
         String[] parsedAddress = address.split(ADDRESS_SPLIT_REGEX);
         if (parsedAddress.length != 4) {
