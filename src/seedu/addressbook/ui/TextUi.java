@@ -41,6 +41,7 @@ public class TextUi {
 
     private final Scanner in;
     private final PrintStream out;
+    private final Formatter formatOutput;
 
     public TextUi() {
         this(System.in, System.out);
@@ -49,6 +50,7 @@ public class TextUi {
     public TextUi(InputStream in, PrintStream out) {
         this.in = new Scanner(in);
         this.out = out;
+        formatOutput = new Formatter(in, out);
     }
 
     /**
