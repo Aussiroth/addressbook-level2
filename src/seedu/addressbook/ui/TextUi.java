@@ -1,11 +1,5 @@
 package seedu.addressbook.ui;
 
-import static seedu.addressbook.common.Messages.MESSAGE_GOODBYE;
-import static seedu.addressbook.common.Messages.MESSAGE_INIT_FAILED;
-import static seedu.addressbook.common.Messages.MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE;
-import static seedu.addressbook.common.Messages.MESSAGE_USING_STORAGE_FILE;
-import static seedu.addressbook.common.Messages.MESSAGE_WELCOME;
-
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -94,7 +88,7 @@ public class TextUi {
     }
 
 
-    public void showWelcomeMessage(String version, String storageFilePath) {
+    /*public void showWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
         showToUser(
                 DIVIDER,
@@ -104,15 +98,27 @@ public class TextUi {
                 MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE,
                 storageFileInfo,
                 DIVIDER);
+    }*/
+
+    public void showWelcomeMessage(String version, String storageFilePath) {
+       formatOutput.showWelcomeMessage(version, storageFilePath);
     }
 
-    public void showGoodbyeMessage() {
+    /*public void showGoodbyeMessage() {
         showToUser(MESSAGE_GOODBYE, DIVIDER, DIVIDER);
     }
 
 
     public void showInitFailedMessage() {
         showToUser(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
+    }*/
+
+    public void showGoodbyeMessage() {
+        formatOutput.showGoodbyeMessage();
+    }
+
+    public void showInitFailedMessage() {
+        formatOutput.showInitFailedMessage();
     }
 
     /** Shows message(s) to the user */
