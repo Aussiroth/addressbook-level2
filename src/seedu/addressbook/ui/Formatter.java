@@ -33,6 +33,10 @@ public class Formatter {
     private final Scanner in;
     private final PrintStream out;
 
+    public Formatter() {
+        this(System.in, System.out);
+    }
+
     public Formatter(InputStream in, PrintStream out) {
         this.in = new Scanner(in);
         this.out = out;

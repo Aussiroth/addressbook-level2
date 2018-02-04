@@ -87,28 +87,4 @@ public class TextUi {
         return fullInputLine;
     }
 
-    public void showWelcomeMessage(String version, String storageFilePath) {
-        formatOutput.showWelcomeMessage(version, storageFilePath);
-    }
-
-    public void showGoodbyeMessage() {
-        formatOutput.showGoodbyeMessage();
-    }
-
-    public void showInitFailedMessage() {
-        formatOutput.showInitFailedMessage();
-    }
-
-    /** Shows message(s) to the user */
-    public void showToUser(String... message) {
-        formatOutput.showToUser(message);
-    }
-
-    /**
-     * Passes result of command to formatter to format and output
-     */
-    public void showResultToUser(CommandResult result) {
-        formatOutput.showResultToUser(result);
-    }
-
 }
