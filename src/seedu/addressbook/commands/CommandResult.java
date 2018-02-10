@@ -15,15 +15,24 @@ public class CommandResult {
 
     /** The list of persons that was produced by the command */
     private final List<? extends ReadOnlyPerson> relevantPersons;
+    private final boolean isAutomaticList;
 
     public CommandResult(String feedbackToUser) {
         this.feedbackToUser = feedbackToUser;
         relevantPersons = null;
+        isAutomaticList = false;
     }
 
     public CommandResult(String feedbackToUser, List<? extends ReadOnlyPerson> relevantPersons) {
         this.feedbackToUser = feedbackToUser;
         this.relevantPersons = relevantPersons;
+        isAutomaticList = false;
+    }
+
+    public CommandResult(String feedbackToUser, List<? extends ReadOnlyPerson> relevantPersons, boolean isAutomaticList) {
+        this.feedbackToUser = feedbackToUser;
+        this.relevantPersons = relevantPersons;
+        this.isAutomaticList = isAutomaticList;
     }
 
     /**
@@ -33,4 +42,7 @@ public class CommandResult {
         return Optional.ofNullable(relevantPersons);
     }
 
+    public boolean getIsAutomaticList(){
+        return isAutomaticList;
+    }
 }

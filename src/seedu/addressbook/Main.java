@@ -87,7 +87,7 @@ public class Main {
             CommandResult result = executeCommand(command);
             recordResult(result);
             ui.showResultToUser(result);
-
+            checkForAutomaticList(result);
         } while (!ExitCommand.isExit(command));
     }
 
@@ -127,5 +127,10 @@ public class Main {
         return isStorageFileSpecifiedByUser ? new StorageFile(launchArgs[0]) : new StorageFile();
     }
 
-
+    private String checkForAutomaticList(CommandResult result){
+        if (result.getIsAutomaticList() == true){
+            return "";
+        }
+        return "";
+    }
 }
