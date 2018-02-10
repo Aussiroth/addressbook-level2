@@ -136,7 +136,6 @@ public class Main {
      */
     private void checkForAutomaticList(CommandResult result){
         if (result.getIsAutomaticList() == true){
-            System.out.println("check is ok");
             ui.showToUser(MESSAGE_AUTOMATIC_LIST);
             Command command = new Parser().parseCommand("list");
             CommandResult newResult = executeCommand(command);
