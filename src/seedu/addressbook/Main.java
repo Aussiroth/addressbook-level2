@@ -24,6 +24,7 @@ public class Main {
 
     /** Version info of the program. */
     public static final String VERSION = "AddressBook Level 2 - Version 1.0";
+    public static final String MESSAGE_AUTOMATIC_LIST = "Automatically listing updated Addressbook after Add/Delete execution.";
 
     private TextUi ui;
     private StorageFile storage;
@@ -127,10 +128,20 @@ public class Main {
         return isStorageFileSpecifiedByUser ? new StorageFile(launchArgs[0]) : new StorageFile();
     }
 
-    private String checkForAutomaticList(CommandResult result){
+    /**
+     * @param result of the executed command from user
+     * if the result indicates to automatically list addressbook, this function
+     * 'creates' and executes a new list result.
+     * otherwise it does nothing
+     */
+    private void checkForAutomaticList(CommandResult result){
         if (result.getIsAutomaticList() == true){
-            return "";
+            System.out.println("check is ok");
+            ui.showToUser(MESSAGE_AUTOMATIC_LIST);
+            Command command = new Parser().parseCommand("list");
+            CommandResult newResult = executeCommand(command);
+            recordResult(newResult);
+            ui.showResultToUser(newResult);
         }
-        return "";
     }
 }
