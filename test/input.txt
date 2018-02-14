@@ -41,19 +41,17 @@
 
   # should add correctly and list non private information
   add Adam Brown p/111111 e/adam@gmail.com a/111, alpha street
-  list
-  add Betsy Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive
-  list
-  add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
-  list
-  add Dickson Ee p/444444 pe/dickson@nus.edu.sg a/444, delta street t/friends
-  list
+  add Potato Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive
+  add Herman Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
+  add Cherry Ee p/444444 pe/dickson@nus.edu.sg a/444, delta street t/friends
   add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
-  list
 
   # should not allow adding duplicate persons
   add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
-
+  
+  # test sort command
+  sort
+  
 ##########################################################
 # test view/viewall persons command
 ##########################################################
@@ -100,17 +98,17 @@
   find betsy
 
   # find unique keyword
-  find Betsy
+  find Adam
   # find multiple with same keyword
   find Dickson
   # find multiple with some keywords
-  find Charlie Betsy
-
+  find Cherry Herman
+  
 ##########################################################
 # test delete person command
 ##########################################################
 
-# last active view: [1] betsy [2] charlie
+# last active view: [1] potato [2] herman
 
   # should catch invalid args format
   delete
@@ -131,7 +129,7 @@
 
   # should have deleted based on last active view's index
   list
-
+  
   # deletes correct person
   delete 4
   list
@@ -139,6 +137,9 @@
   # listing indexes get updated on next request
   delete 1
   list
+  
+  # another sort test
+  sort
 
 ##########################################################
 # test clear command
